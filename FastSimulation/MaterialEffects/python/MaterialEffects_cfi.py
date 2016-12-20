@@ -4,7 +4,7 @@ import FWCore.ParameterSet.Config as cms
 MaterialEffectsBlock = cms.PSet(
     MaterialEffects = cms.PSet(
 
-        use_hardcoded_geometry = cms.bool(True),
+        use_hardcoded_geometry = cms.bool(True), #Check later
     
         # Material Properties (Silicon)
         # A

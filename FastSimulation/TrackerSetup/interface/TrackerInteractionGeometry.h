@@ -25,7 +25,7 @@ class TrackerInteractionGeometry
 
  public:
 
-  enum FirstCylinders { PXB=0,PXD=3,TIB=5,TID=9,TOB=12,TEC=18 };
+  enum FirstCylinders { PXB=0,PXD=4,TIB=7,TID=11,TOB=14,TEC=20 }; //{ PXB=0,PXD=3,TIB=5,TID=9,TOB=12,TEC=18 }
 
   /// Constructor : get the configurable parameters
   TrackerInteractionGeometry(const edm::ParameterSet& trackerMaterial,
@@ -66,16 +66,16 @@ class TrackerInteractionGeometry
   unsigned int version;
   /// Beam Pipe
   std::vector<double> beamPipeThickness;
-  /// Pixel Barrel Layers 1-3
+  /// Pixel Barrel Layers 1-4
   std::vector<double> pxbThickness;
-  /// Pixel Barrel services at the end of layers 1-3
+  /// Pixel Barrel services at the end of layers 1-4
   std::vector<double> pxb1CablesThickness;
   std::vector<double> pxb2CablesThickness;
   std::vector<double> pxb3CablesThickness;
   /// Pixel Barrel outside cables
   std::vector<double> pxbOutCables1Thickness;
   std::vector<double> pxbOutCables2Thickness;
-  /// Pixel Disks 1-2
+  /// Pixel Disks 1-3
   std::vector<double> pxdThickness;
   /// Pixel Endcap outside cables
   std::vector<double> pxdOutCables1Thickness;
