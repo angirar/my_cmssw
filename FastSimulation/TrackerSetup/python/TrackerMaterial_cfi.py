@@ -4,16 +4,16 @@ import FWCore.ParameterSet.Config as cms
 TrackerMaterialBlock = cms.PSet(
     TrackerMaterial = cms.PSet(
 
-    use_hardcoded_geometry = cms.bool(False),
-#not actual values 
+    use_hardcoded_geometry = cms.bool(True),
+#some are actual values from TDR but not complete info like of cables,services etc. 
     disk_thickness = cms.vdouble(0.058,0.058,0.058,0.04,0.04,0.055,0.05,0.05,0.05,0.05,0.05,0.05,0.05,0.05,0.05),
     disk_inner_radius = cms.vdouble(5.82585,5.82585,5.82585,22.7005,22.7005,22.7005,23.3726,23.3726,23.3726,32.1214,32.1214,32.1214,39.2102,39.2102,50.4201),
     disk_outer_radius = cms.vdouble(14.5978,14.5978,14.5978,50.4389,50.4389,50.4389,109.521,109.521,109.521,109.521,109.521,109.521,109.521,109.521,109.521),
-    disk_z = cms.vdouble(35.5,48.5,59.5,79.2,92.15,105.1,131.892,145.892,159.892,173.892,187.892,205.392,224.379,244.879,266.379),
+    disk_z = cms.vdouble(29.1,39.6,51.6,79.2,92.15,105.1,131.892,145.892,159.892,173.892,187.892,205.392,224.379,244.879,266.379),
 
     barrel_thickness = cms.vdouble(0.0217,0.0217,0.0217,0.0217,0.053,0.053,0.035,0.04,0.03,0.03,0.022,0.022,0.022,0.022),
     barrel_radius = cms.vdouble(3,6.8,10.9,16,25.7514,34.0888,41.9601,49.8925,60.9234,69.309,78.0686,86.8618,96.5557,108.05),
-    barrel_length = cms.vdouble(53.38,53.38,53.38,53.38,130.595,132.554,132.554,132.78,217.419,217.419,217.419,217.419,217.419,217.419),
+    barrel_length = cms.vdouble(54.88,54.88,54.88,54.88,130.595,132.554,132.554,132.78,217.419,217.419,217.419,217.419,217.419,217.419),
 
     # version 0 = Tracker geometry used between CMSSW_1_2_0 and CMSSW_1_4_10. Works for CSA07; 
     # version 1 = Tuned to CMSSW_1_7_0 geometry
@@ -28,19 +28,22 @@ TrackerMaterialBlock = cms.PSet(
     # Beam Pipe
     BeamPipeThickness = cms.vdouble(0.0038, 0.00265, 0.00265, 0.00265, 0.00240 ),
     # Pixel Barrel Layers 1-4
-    PXBThickness = cms.vdouble(0.0222, 0.0217, 0.0217, 0.0217, 0.0217, 0.0217), 
-    # Pixel Barrel services at the end of layers 1-3
+    PXBThickness = cms.vdouble(0.0222, 0.0217, 0.0217, 0.0217, 0.0217) 
+    # Pixel Barrel services at the end of layers 1-4
     PXB1CablesThickness = cms.vdouble(0.1, 0.042, 0.042, 0.000, 0.000), 
     PXB2CablesThickness = cms.vdouble(0.04, 0.042, 0.042, 0.000, 0.000),
     PXB3CablesThickness = cms.vdouble(0.03, 0.042, 0.042, 0.000, 0.000),
+#    PXB4CablesThickness = cms.vdouble(0.03, 0.042, 0.042, 0.000, 0.000),
+
     # Pixel Barrel outside cables
     PXBOutCables1Thickness = cms.vdouble(0.04, 0.04, 0.04, 0.04, 0.04), 
     PXBOutCables2Thickness = cms.vdouble(0.025, 0.015, 0.015, 0.012, 0.012),
     # Pixel Disks 1-3
-    PXDThickness = cms.vdouble(0.044, 0.058, 0.058, 0.058, 0.058, 0.058),
+    PXDThickness = cms.vdouble(0.044, 0.058, 0.058, 0.058, 0.058),
     # Pixel Endcap outside cables
     PXDOutCables1Thickness = cms.vdouble(0.023, 0.034, 0.034, 0.050, 0.050),
     PXDOutCables2Thickness = cms.vdouble(0.085, 0.185, 0.250, 0.250, 0.250),
+ #   PXDOutCables3Thickness = cms.vdouble(0.105, 0.215, 0.300, 0.300, 0.300),
     # Tracker Inner barrel layers 1-4
     TIBLayer1Thickness = cms.vdouble(0.06, 0.053, 0.053, 0.053, 0.053),
     TIBLayer2Thickness = cms.vdouble(0.047, 0.053, 0.053, 0.053, 0.053),
@@ -84,6 +87,7 @@ TrackerMaterialBlock = cms.PSet(
     PXB1CablesInnerRadius = cms.vdouble(3.6, 3.7, 3.7, 3.7, 3.7),
     PXB2CablesInnerRadius = cms.vdouble(6.1, 6.3, 6.3, 6.3, 6.3),
     PXB3CablesInnerRadius = cms.vdouble(8.5, 9.0, 9.0, 9.0, 9.0),
+ #   PXB4CablesInnerRadius = cms.vdouble(10.5, 11.0, 11.0, 11.0, 11.0),
     # Pixel Barrel Outside walls and cables (endcap)
     PXBOutCables1InnerRadius = cms.vdouble(11.9, 11.9, 11.9, 4.2, 4.2),
     PXBOutCables1OuterRadius = cms.vdouble(15.5, 15.5, 15.5, 16.5, 16.5),
@@ -145,68 +149,68 @@ TrackerMaterialBlock = cms.PSet(
     107,  # Pixel endcap services
     107,  # Pixel endcap services
     107,  # Pixel endcap services
-    6,    # TIB1 services  
-    7,    # TIB2 services  
-    8,    # TIB3 services  
-    9,    # TIB4 services  
-    10,   # TID Layer 1
-    11,   # TID Layer 2
-    12,   # TID Layer 3
+    8,    # TIB1 services  
+    9,    # TIB2 services  
+    10,    # TIB3 services  
+    11,    # TIB4 services  
+    12,   # TID Layer 1
+    13,   # TID Layer 2
+    14,   # TID Layer 3
     110,  # TID outside services
     110,  # TID outside services
     111,  # TOB inside services
     111,  # TOB inside services
-    13,   # TOB Layer1
-    13,   # TOB Layer1
-    13,   # TOB Layer1
-    13,   # TOB Layer1
-    14,   # TOB Layer2
-    14,   # TOB Layer2
-    14,   # TOB Layer2
-    14,   # TOB Layer2
-    15,   # TOB Layer3
-    15,   # TOB Layer3
-    15,   # TOB Layer3
-    15,   # TOB Layer3
-    16,   # TOB Layer4
-    16,   # TOB Layer4
-    16,   # TOB Layer4
-    16,   # TOB Layer4
-    17,   # TOB Layer5
-    17,   # TOB Layer5
-    17,   # TOB Layer5
-    17,   # TOB Layer5
-    18,   # TOB Layer6
-    18,   # TOB Layer6
-    18,   # TOB Layer6
-    18,   # TOB Layer6
+    15,   # TOB Layer1
+    15,   # TOB Layer1
+    15,   # TOB Layer1
+    15,   # TOB Layer1
+    16,   # TOB Layer2
+    16,   # TOB Layer2
+    16,   # TOB Layer2
+    16,   # TOB Layer2
+    17,   # TOB Layer3
+    17,   # TOB Layer3
+    17,   # TOB Layer3
+    17,   # TOB Layer3
+    18,   # TOB Layer4
+    18,   # TOB Layer4
+    18,   # TOB Layer4
+    18,   # TOB Layer4
+    19,   # TOB Layer5
+    19,   # TOB Layer5
+    19,   # TOB Layer5
+    19,   # TOB Layer5
+    20,   # TOB Layer6
+    20,   # TOB Layer6
+    20,   # TOB Layer6
+    20,   # TOB Layer6
     112,  # TOB services
     112,  # TOB services
     112,  # TOB services
-    19,  # TEC Layer 1
-    19,  # TEC Layer 1
-    19,  # TEC Layer 1
-    20,  # TEC Layer 2
-    20,  # TEC Layer 2
-    20,  # TEC Layer 2
-    21,  # TEC Layer 3
-    21,  # TEC Layer 3
-    21,  # TEC Layer 3
-    22,  # TEC Layer 4
-    22,  # TEC Layer 4
-    22,  # TEC Layer 4
-    23,  # TEC Layer 5
-    23,  # TEC Layer 5
-    23,  # TEC Layer 5
-    24,  # TEC Layer 6
-    24,  # TEC Layer 6
-    24,  # TEC Layer 6
-    25,  # TEC Layer 7
-    25,  # TEC Layer 7
-    26,  # TEC Layer 8
-    26,  # TEC Layer 8
-    27,  # TEC Layer 9
-    27,  # TEC Layer 9
+    21,  # TEC Layer 1
+    21,  # TEC Layer 1
+    21,  # TEC Layer 1
+    22,  # TEC Layer 2
+    22,  # TEC Layer 2
+    22,  # TEC Layer 2
+    23,  # TEC Layer 3
+    23,  # TEC Layer 3
+    23,  # TEC Layer 3
+    24,  # TEC Layer 4
+    24,  # TEC Layer 4
+    24,  # TEC Layer 4
+    25,  # TEC Layer 5
+    25,  # TEC Layer 5
+    25,  # TEC Layer 5
+    26,  # TEC Layer 6
+    26,  # TEC Layer 6
+    26,  # TEC Layer 6
+    27,  # TEC Layer 7
+    27,  # TEC Layer 7
+    28,  # TEC Layer 8
+    28,  # TEC Layer 8
+    29,  # TEC Layer 9
+    29,  # TEC Layer 9
     113,  # Barrel Wall
 #
     114, # Endcap Wall : 4.889<eta<5.191
