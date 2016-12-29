@@ -56,6 +56,7 @@ FamosProducer::~FamosProducer()
 
 void
 FamosProducer::beginRun(edm::Run const& run, const edm::EventSetup & es) {
+  std::cout<<"Inside beginRun()"<<std::endl;
   famosManager_->setupGeometryAndField(run,es);
 }
  

@@ -96,10 +96,11 @@ TrackerMaterialBlock = cms.PSet(
     PXBOutCables2OuterRadius = cms.vdouble(16.5, 16.5, 16.5, 16.5, 16.5),
     PXBOutCables2ZPosition = cms.vdouble(28.0, 28.8, 28.8, 28.8, 28.8),
     # Pixel Outside walls and cables (barrel and endcap)
-    PixelOutCablesRadius = cms.vdouble(17.1, 17.5, 17.5, 17.5, 17.5), 
+    #PixelOutCablesRadius = cms.vdouble(17.1, 17.5, 17.5, 17.5, 17.5), 
+    PixelOutCablesRadius = cms.vdouble(18.1, 18.5, 18.5, 18.5, 18.5),
     PixelOutCablesLength = cms.vdouble(64.8, 72.0, 72.0, 65.0, 65.0),
     PixelOutCablesInnerRadius = cms.vdouble(3.0, 3.0, 7.197, 7.2, 6.5),
-    PixelOutCablesOuterRadius = cms.vdouble(17.3, 17.61, 17.61, 17.61, 17.61),
+    PixelOutCablesOuterRadius = cms.vdouble(18.3, 18.61, 18.61, 18.61, 18.61),
     PixelOutCablesZPosition = cms.vdouble(64.9, 72.1, 72.1, 65.1, 65.1),
     # Tracker Inner Barrel Outside Cables and walls (endcap)
     TIBOutCables1InnerRadius = cms.vdouble(22.5, 22.5, 22.5, 22.5, 22.5),
